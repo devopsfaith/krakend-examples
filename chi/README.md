@@ -3,10 +3,10 @@ Krakend Chi example
 
 ## Build
 
-Go 1.8 is a requirement
+Go 1.12 is a requirement
 
 ```bash
-$ make
+$ go build -o krakend_chi_example .
 ```
 
 ## Run

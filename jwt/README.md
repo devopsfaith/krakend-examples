@@ -3,9 +3,9 @@ Krakend JWT example
 
 ## Build
 
-Go 1.8 is a requirement
+Go 1.12 is a requirement
 
-	$ make
+	$ go build -o krakend_jwt_example .
 
 ## Run
 
