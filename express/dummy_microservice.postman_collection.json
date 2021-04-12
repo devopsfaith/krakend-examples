@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "8c18e3ec-2fb4-4dea-aa5e-8a40f26ce685",
+		"name": "dummy_microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2UxM0BnbWFpbC5jb20iLCJpYXQiOjE2MTgyMjcyNTIsImV4cCI6MTYxODMxMzY1Mn0.e-ip7on7JIgZJa3yLZkn0zx-VKevvG-K_PD5jFsEb80",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookName\": \"beautity and the best\",\n    \"bookPrice\": \"45000\",\n    \"bookReleaseDate\": \"03/25/2008\",\n    \"bookPublishDate\": \"03/28/2010\",\n    \"bookLanguage\": [\n        \"english\",\n        \"indonesia\",\n        \"jepang\"\n    ],\n    \"bookIsbn\": \"1993322488521\",\n    \"bookPublisher\": \"gramedia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "results",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2UxM0BnbWFpbC5jb20iLCJpYXQiOjE2MTgyMjcyNTIsImV4cCI6MTYxODMxMzY1Mn0.e-ip7on7JIgZJa3yLZkn0zx-VKevvG-K_PD5jFsEb80",
+								"type": "text"
+							},
+							{
+								"key": "grant",
+								"value": "admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "result",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"id\": 1,\n    \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\n    \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/book/6074194bff97c5001e86f9ec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"6074194bff97c5001e86f9ec"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "author",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2UxM0BnbWFpbC5jb20iLCJpYXQiOjE2MTgyMjcyNTIsImV4cCI6MTYxODMxMzY1Mn0.e-ip7on7JIgZJa3yLZkn0zx-VKevvG-K_PD5jFsEb80",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookId\": \"607477b8a5e77d396b124958\",\n    \"authorName\": \"james wajolf ski\",\n    \"authorState\": \"san francisco\",\n    \"authorCountry\": \"united stated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "results",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2UxM0BnbWFpbC5jb20iLCJpYXQiOjE2MTgyMjcyNTIsImV4cCI6MTYxODMxMzY1Mn0.e-ip7on7JIgZJa3yLZkn0zx-VKevvG-K_PD5jFsEb80",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "result",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2UxM0BnbWFpbC5jb20iLCJpYXQiOjE2MTgyMjcyNTIsImV4cCI6MTYxODMxMzY1Mn0.e-ip7on7JIgZJa3yLZkn0zx-VKevvG-K_PD5jFsEb80",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/author/607478dcf161dc40bb9a02c0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"author",
+								"607478dcf161dc40bb9a02c0"
+							],
+							"query": [
+								{
+									"key": "Autho",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"johndoe131@gmail.com\",\n    \"password\": \"qwerty12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

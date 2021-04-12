@@ -1,0 +1,76 @@
+version: '3.8'
+services:
+  #####################
+  # Book Service
+  #####################
+  book-service:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./books/Dockerfile
+    env_file: ./books/.env
+    ports:
+      - 3000:3000
+    volumes:
+      - ./books:/usr/src/books
+      - /usr/src/books/node_modules
+    networks:
+      - api-gateway
+    depends_on:
+      - db
+  #####################
+  # Author Service
+  #####################
+  author-service:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./authors/Dockerfile
+    env_file: ./authors/.env
+    ports:
+      - 3001:3001
+    volumes:
+      - ./authors:/usr/src/authors
+      - /usr/src/authors/node_modules
+    networks:
+      - api-gateway
+    depends_on:
+      - db
+  #####################
+  # Mongo Service
+  #####################
+  db:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/var/lib/data
+    networks:
+      - api-gateway
+  #####################
+  # krakend Service
+  #####################
+  proxy:
+    image: devopsfaith/krakend:latest
+    restart: always
+    ports:
+      - 8080:8080
+      - 8090:8090
+    volumes:
+      - ./krakend.json:/etc/krakend/krakend.json
+    depends_on:
+      - book-service
+      - author-service
+    networks:
+      - api-gateway
+  #####################
+  # Volumes Service
+  #####################
+volumes:
+  mongo-data:
+  #####################
+  # Networks Service
+  #####################
+networks:
+  api-gateway:

@@ -1,0 +1,4 @@
+.env
+krakend
+node_modules
+Dockerfile
